@@ -1,6 +1,6 @@
-using ER2UC12.Interfaces;
+using UC12.Interfaces;
 
-namespace ER2UC12.Classes
+namespace UC12.Classes
 {
     public class PessoaJuridica : Pessoa, IPessoaJuridica
     {

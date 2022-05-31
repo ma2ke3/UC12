@@ -1,4 +1,4 @@
-namespace ER2UC12.Interfaces
+namespace UC12.Interfaces
 {
     public interface IPessoaJuridica
     {

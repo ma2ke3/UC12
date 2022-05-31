@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ttap5\\Documents\\Senai\\Full stack 2021\\ER2UC12\\ER2UC12.csproj",
+      "projectUniqueName": "C:\\Users\\ttap5\\Documents\\Senai\\Full stack 2021\\UC12\\UC12\\ER2UC12.csproj",
       "projectName": "ER2UC12",
-      "projectPath": "C:\\Users\\ttap5\\Documents\\Senai\\Full stack 2021\\ER2UC12\\ER2UC12.csproj",
+      "projectPath": "C:\\Users\\ttap5\\Documents\\Senai\\Full stack 2021\\UC12\\UC12\\ER2UC12.csproj",
       "packagesPath": "C:\\Users\\ttap5\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ttap5\\Documents\\Senai\\Full stack 2021\\ER2UC12\\obj\\",
+      "outputPath": "C:\\Users\\ttap5\\Documents\\Senai\\Full stack 2021\\UC12\\UC12\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ttap5\\AppData\\Roaming\\NuGet\\NuGet.Config"
