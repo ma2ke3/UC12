@@ -9,7 +9,7 @@ Console.WriteLine(@$"
 | Pessoa Física / Jurídica |
 .__________________________.
 ");
-Carregamento ("Iniciando", 1000, 10);
+Carregamento ("Iniciando", 100, 10);
 string? opcao;
 do
 {
@@ -49,7 +49,9 @@ do
             Console.WriteLine(@$"
 Nome: {novaPf.Nome}
 Endereço: {novaPf.Endereco.logradouro}, {novaPf.Endereco.numero} 
-Maior de idade: {metodosPf.ValidarDataNasc(novaPf.dataNasc)}");
+Maior de idade: {(metodosPf.ValidarDataNasc(novaPf.dataNasc)?"Sim":"Não")}
+Imposto a ser pago: {metodosPf.PagarImposto(novaPf.Rendimento).ToString("C")}
+");
 
             Console.WriteLine($"Tecle ENTER para seguir");
             Console.ReadLine();
@@ -78,6 +80,7 @@ Razão Social: {novaPj.RazaoSocial}
 CNPJ: {novaPj.Cnpj}, Válido: {metodosPj.ValidarCnpj(novaPj.Cnpj)}
 Endereço: {novaPj.Endereco.logradouro}, Nº: {novaPj.Endereco.numero}
 Complemento: {novaPj.Endereco.complemento}
+Imposto a ser pago: {metodosPj.PagarImposto(novaPj.Rendimento).ToString("C")}
 ");
             // Console.WriteLine(metodosPj.ValidarCnpj(novaPj.Cnpj));
 
