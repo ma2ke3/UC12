@@ -106,6 +106,16 @@ do
                         novaPf.Endereco = novoEndPf;
 
                         listaPf.Add(novaPf);
+
+                        // StreamWriter sw = new StreamWriter($"{novaPf.Nome}.txt");
+                        // sw.WriteLine(novaPf.Nome);
+                        // sw.Close();
+
+                        using (StreamWriter sw = new StreamWriter($"{novaPf.Nome}.txt"))
+                        {
+                            sw.WriteLine(novaPf.Nome);
+                        }
+
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.WriteLine($"Cadastro realizado com sucesso!");
                         Console.ResetColor();
@@ -116,28 +126,40 @@ do
                     case "2":
 
                         Console.Clear();
-                        if (listaPf.Count > 0)
+
+                        //                         if (listaPf.Count > 0)
+                        //                         {
+                        //                             foreach (PessoaFisica cadaPessoa in listaPf)
+                        //                             {
+                        //                                 Console.Clear();
+                        //                                 Console.WriteLine(@$"
+                        // Nome: {cadaPessoa.Nome}
+                        // Endereço: {cadaPessoa.Endereco.logradouro}, {cadaPessoa.Endereco.numero} 
+                        // Maior de idade: {(metodosPf.ValidarDataNasc(cadaPessoa.dataNasc) ? "Sim" : "Não")}
+                        // Imposto a ser pago: {metodosPf.PagarImposto(cadaPessoa.Rendimento).ToString("C")}
+                        // ");
+                        //                                 Console.WriteLine("Aperle ENTER para continuar");
+                        //                                 Console.ReadLine();
+                        //                             }
+                        //                         }
+                        //                         else
+                        //                         {
+                        //                             Console.WriteLine($"Lista vazia");
+                        //                             Thread.Sleep(3000);
+                        //                         }
+
+                        using (StreamReader sr = new StreamReader("João.txt"))
                         {
-                            foreach (PessoaFisica cadaPessoa in listaPf)
+                            string linha;
+                            while ((linha = sr.ReadLine()) != null)
                             {
-                                Console.Clear();
-                                Console.WriteLine(@$"
-Nome: {cadaPessoa.Nome}
-Endereço: {cadaPessoa.Endereco.logradouro}, {cadaPessoa.Endereco.numero} 
-Maior de idade: {(metodosPf.ValidarDataNasc(cadaPessoa.dataNasc) ? "Sim" : "Não")}
-Imposto a ser pago: {metodosPf.PagarImposto(cadaPessoa.Rendimento).ToString("C")}
-");
-                                Console.WriteLine("Aperle ENTER para continuar");
-                                Console.ReadLine();
+                                Console.WriteLine($"{linha}");
                             }
                         }
-                        else
-                        {
-                            Console.WriteLine($"Lista vazia");
-                            Thread.Sleep(3000);
-                        }
-
-                        break;
+                        Console.WriteLine("Aperte ENTER para continuar");
+                        Console.ReadLine();
+                        
+                            break;
 
                     case "0":
                         break;
