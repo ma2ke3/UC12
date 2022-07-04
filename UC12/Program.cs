@@ -158,8 +158,8 @@ do
                         }
                         Console.WriteLine("Aperte ENTER para continuar");
                         Console.ReadLine();
-                        
-                            break;
+
+                        break;
 
                     case "0":
                         break;
@@ -193,15 +193,30 @@ do
 
             novaPj.Endereco = novoEndPj;
 
-            Console.Clear();
-            Console.WriteLine(@$"
-Nome: {novaPj.Nome}
-Razão Social: {novaPj.RazaoSocial}
-CNPJ: {novaPj.Cnpj}, Válido: {metodosPj.ValidarCnpj(novaPj.Cnpj)}
-Endereço: {novaPj.Endereco.logradouro}, Nº: {novaPj.Endereco.numero}
-Complemento: {novaPj.Endereco.complemento}
-Imposto a ser pago: {metodosPj.PagarImposto(novaPj.Rendimento).ToString("C")}
+            metodosPj.Inserir(novaPj);
+
+            List<PessoaJuridica> ListaPj = metodosPj.LerArquivo();
+            foreach (PessoaJuridica cadaItem in ListaPj)
+            {
+                Console.Clear();
+                Console.WriteLine(@$"
+Nome: {cadaItem.Nome}
+Razão Social: {cadaItem.RazaoSocial}
+CNPJ: {cadaItem.Cnpj}
 ");
+                Console.WriteLine($"Tecle ENTER para seguir");
+                Console.ReadLine();
+            }
+
+//             Console.Clear();
+//             Console.WriteLine(@$"
+// Nome: {novaPj.Nome}
+// Razão Social: {novaPj.RazaoSocial}
+// CNPJ: {novaPj.Cnpj}, Válido: {metodosPj.ValidarCnpj(novaPj.Cnpj)}
+// Endereço: {novaPj.Endereco.logradouro}, Nº: {novaPj.Endereco.numero}
+// Complemento: {novaPj.Endereco.complemento}
+// Imposto a ser pago: {metodosPj.PagarImposto(novaPj.Rendimento).ToString("C")}
+// ");
             // Console.WriteLine(metodosPj.ValidarCnpj(novaPj.Cnpj));
 
             Console.WriteLine($"Tecle ENTER para seguir");
